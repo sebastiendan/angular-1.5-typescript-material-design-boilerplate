@@ -7,3 +7,9 @@ npm install
 tsd install
 bower install
 ```
+
+## Build
+
+```
+gulp
+```
