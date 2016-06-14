@@ -2,21 +2,15 @@
 <html>
 
 <head>
-    <base href="/cleaner/">
+    <base href="/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Angular 1 with Typescript and Material Design</title>
-    <link rel="stylesheet" href="{%static 'bower_components/material-design-lite/material.min.css' %}">
-    <link rel="stylesheet" href="{%static 'bower_components/angular-pickadate/dist/angular-pickadate.css' %}">
-    <link rel="stylesheet" href="{%static 'bower_components/angular-material/angular-material.min.css' %}">
-    <link rel="stylesheet" href="{%static 'bower_components/angular-material-datetimepicker/css/material-datetimepicker.min.css' %}">
-    <link rel="stylesheet" href="{%static 'bower_components/lf-ng-md-file-input/dist/lf-ng-md-file-input.min.css' %}">
-    <link rel="stylesheet" href="{%static 'src/common/css/styles.css' %}">
-    <script src="{%static 'bower_components/material-design-lite/material.min.js' %}"></script>
-    <script src="{%static 'bower_components/moment/moment.js' %}"></script>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css' %}">
+    <link rel="stylesheet" href="app/css/styles.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> {% block styles%}{% endblock%}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -32,26 +26,9 @@
         <footer>
         </footer>
     </div>
-    <div id="cleaner-templates"></div>
-    <div id="common-templates"></div>
-    <script src="{%static 'bower_components/requirejs/require.js' %}" data-main="{%static 'src/cleaner/js/start' %}"></script>
-    <script src="{%static 'src/common/js/config.js' %}"></script>
-    <script>
-        define('urls', [], function() {
-            var urls = {
-                userUrl: "{% url 'cleaner:user' %}",
-                signInUrl: "{% url 'cleaner:signin' %}",
-                signOutUrl: "{% url 'cleaner:signout' %}",
-                signUpUrl: "{% url 'cleaner:signup' %}",
-                saveUserProfileUrl: "{% url 'cleaner:profile' %}",
-                invitationDetailsUrl: "{% url 'cleaner:invitation_details' %}",
-                invitationReplyUrl: "{% url 'cleaner:invitation_reply' %}"
-            };
-
-            return urls;
-        });
-    </script>
-    {% block scripts%}{% endblock%}
+    <div id="templates"></div>
+    <script src="bower_components/requirejs/require.js" data-main="app/js/start"></script>
+    <script src="app/js/config.js' %}"></script>
 </body>
 
 </html>
