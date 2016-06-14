@@ -1,0 +1,23 @@
+<div class="mdl-layout__header-row sq-header">
+    <button id="menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">more_vert</i>
+    </button>
+
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="menu-lower-left">
+        <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">
+            <a class="mdl-navigation__link sq-main-menu-link" ui-sref="home">{{ 'Home' | translate }}</a>
+        </li>
+        <li class="mdl-menu__item">
+            <a class="mdl-navigation__link sq-main-menu-link" ui-sref="view-listings">{{ 'Data table' }}</a>
+        </li>
+        <li class="mdl-menu__item">
+            <a class="mdl-navigation__link sq-main-menu-link" ui-sref="view-accounts">{{ 'Add data' }}</a>
+        </li>
+    </ul>
+    <span class="mdl-layout-title">{{ 'Menu' | translate }}</span>
+    <div class="mdl-layout-spacer"></div>
+    <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="#" ng-click="hc.changeLanguage('en')">English</a>
+        <a class="mdl-navigation__link" href="#" ng-click="hc.changeLanguage('fr')">French</a>
+    </nav>
+</div>
