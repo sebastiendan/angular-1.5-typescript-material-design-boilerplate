@@ -2,3 +2,6 @@
 node_modules
 typings
 bower_components
+
+app/js
+app/css

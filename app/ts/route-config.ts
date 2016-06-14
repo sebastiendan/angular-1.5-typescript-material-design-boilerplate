@@ -8,22 +8,22 @@ export =[
             .state('home', {
                 url: '/',
                 views: {
-                    'header': { template: '<header-block></header-block>' },
-                    'main': { template: '<home></home>' }
+                    'header': { template: '<header-block mdl-upgrade></header-block>' },
+                    'main': { template: '<home mdl-upgrade></home>' }
                 }
             })
             .state('data', {
                 url: '/data/',
                 views: {
-                    'header': { template: '<header-block></header-block>' },
-                    'main': { template: '<dataTable></dataTable>' }
+                    'header': { template: '<header-block mdl-upgrade></header-block>' },
+                    'main': { template: '<view-list mdl-upgrade></view-list>' }
                 }
             })
             .state('new-data', {
                 url: '/new-data/',
                 views: {
-                    'header': { template: '<header-block></header-block>' },
-                    'main': { template: '<dataForm></dataForm>' }
+                    'header': { template: '<header-block mdl-upgrade></header-block>' },
+                    'main': { template: '<view-form mdl-upgrade></view-form>' }
                 }
             });
 

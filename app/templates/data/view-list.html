@@ -1,0 +1,20 @@
+<md-content flex layout-padding>
+    <div class="mdl-grid">
+        <table class="mdl-cell mdl-cell--12-col mdl-data-table mdl-js-data-table mdl-shadow--6dp">
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">{{ 'Brand' | translate }}</th>
+                <th class="mdl-data-table__cell--non-numeric">{{ 'Model' | translate }}</th>
+                <th class="mdl-data-table__cell--non-numeric">{{ 'Colour' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="data in vlc.data track by $index">
+                <td class="mdl-data-table__cell--non-numeric">{{ data.brand }}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{ data.model }}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{ data.colour }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</md-content>

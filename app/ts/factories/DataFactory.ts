@@ -2,7 +2,7 @@
 
 import {IPromise, IQService, IHttpPromiseCallbackArg, IHttpService} from "angular";
 import {Data} from "../models/Data";
-import {HttpResponse} from "../../../common/ts/models/HttpResponse";
+import {HttpResponse} from "./models/HttpResponse";
 
 export interface IDataFactory {
     all(): IPromise<Data[] | { [id: string]: Array<string> }>;
@@ -12,20 +12,31 @@ export interface IDataFactory {
 export class DataFactory implements IDataFactory {
     static $inject = ['$http'];
 
-    data: any;
+    data: Data[];
 
     constructor(private $http: IHttpService, private $q: IQService) {
+        this.data = [
+            {
+                brand: 'Fender',
+                model: 'Stratocaster',
+                colour: 'Sonic Blue'
+            },
+            {
+                brand: 'Fender',
+                model: 'Telecaster',
+                colour: 'Sunburst'
+            },
+            {
+                brand: 'Gibson',
+                model: 'Les Paul',
+                colour: 'Sunburst'
+            }
+        ];
     }
 
     all(): IPromise<Data[] | { [id: string]: Array<string> }> {
 
         let deffered = this.$q.defer();
-
-        this.data = [{
-            property1: 'value1',
-            property2: 'value2',
-            property3: 'value3'
-        }];
 
         if (this.data) {
             deffered.resolve(this.data);

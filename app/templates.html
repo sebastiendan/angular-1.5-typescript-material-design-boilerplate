@@ -1,0 +1,125 @@
+<script type="text/ng-template" id="error-messages.html"><div class="ng-message" ng-message="required">{{ 'This field is mandatory' | translate }}</div></script>
+<script type="text/ng-template" id="sd-input.html"><!-- Generic input types -->
+<md-input-container ng-class="{'md-block': sic.block}" ng-if="['text', 'email', 'password', 'number', 'textarea', 'tel'].indexOf(sic.type) > -1" ng-disabled="sic.disabled">
+    <label for="{{ sic.name }}">{{ sic.label | translate }}</label>
+    <input type="{{ sic.type }}"
+           id="{{ sic.name }}"
+           name="{{ sic.name }}"
+           ng-model="sic.model"
+           ng-required="sic.required"
+           ng-pattern="sic.customPattern"
+           ng-disabled="sic.disabled"
+           ng-if="sic.type!='textarea'"
+           ng-show="sic.showInput">
+    <textarea type="{{ sic.type }}"
+              id="{{ sic.name }}"
+              name="{{ sic.name }}"
+              ng-model="sic.model"
+              ng-required="sic.required"
+              ng-disabled="sic.disabled"
+              ng-if="sic.type=='textarea'"
+              ng-show="sic.showInput">
+    </textarea>
+    <div class="sd-empty-field" ng-show="sic.showEmptyLabel">{{ sic.emptyLabel | translate }}</div>
+</md-input-container>
+
+<!-- Checkbox -->
+<label ng-if="sic.type=='checkbox'" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect sd-input-checkbox-wrapper"
+       for="{{ sic.name }}">
+    <input type="checkbox"
+           id="{{ sic.name }}"
+           class="mdl-checkbox__input sd-input-checkbox"
+           name="{{ sic.name }}"
+           ng-model="sic.model"
+           ng-required="sic.required"
+           ng-disabled="sic.disabled">
+    <span class="mdl-checkbox__label sd-input-checkbox-label">{{ sic.label | translate }}</span>
+</label>
+
+<!-- Error messages -->
+<div class="ng-message-wrapper" ng-class="{'sd-checkbox-message-wrapper': sic.type=='checkbox'}" ng-messages="sic.form[sic.name].$error" role="alert"
+     ng-show="sic.form.$submitted && sic.form[sic.name].$invalid" multiple>
+    <div ng-repeat="msg in sic.customMessages" class="ng-message" ng-message="{{ msg.id }}">{{ msg.message | translate }}</div>
+    <div ng-messages-include="error-messages.html"></div>
+</div></script>
+<script type="text/ng-template" id="sd-radio.html"><md-radio-group ng-model="src.model">
+    <label>{{ src.label | translate }}</label>
+    <md-radio-button ng-repeat="(value, label) in src.data track by $index" value="{{value}}" ng-disabled="src.disabled">{{ label | translate }}</md-radio-button>
+</md-radio-group></script>
+<script type="text/ng-template" id="sd-select.html"><md-input-container style="margin-bottom: 0">
+    <label>{{ ssc.label | translate }}</label>
+    <md-select ng-model="ssc.model">
+        <md-option ng-repeat="(value, label) in ssc.data track by $index" value="{{value}}">{{ label | translate }}</md-option>
+    </md-select>
+</md-input-container></script>
+<script type="text/ng-template" id="sd-submit.html"><div class="sq-input-submit-wrapper">
+    <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+           type="submit" value="{{ ssc.value | translate }}"/>
+</div></script>
+<script type="text/ng-template" id="view-form.html"><md-content flex layout-padding>
+    <form ng-submit="vfc.saveData()" name="vfc.dataForm" novalidate>
+        <sd-select label="Brand"
+                   model="vfc.newData.brand"
+                   data="{'Fender': 'Fender', 'Gibson': 'Gibson', 'Godin': 'Godin'}"
+                   required="true">
+        </sd-select>
+        <sd-input model="vfc.newData.model"
+                  label="Model"
+                  name="model"
+                  type="text"
+                  required="true">
+        </sd-input>
+        <sd-radio model="vfc.newData.colour"
+                  label="Colour"
+                  data="{'Sonic Blue': 'Sonic Blue', 'Sunburst': 'Sunburst'}"
+                  required="true">
+        </sd-radio>
+        <sd-submit value="Save new data"></sd-submit>
+    </form>
+</md-content></script>
+<script type="text/ng-template" id="view-list.html"><md-content flex layout-padding>
+    <div class="mdl-grid">
+        <table class="mdl-cell mdl-cell--12-col mdl-data-table mdl-js-data-table mdl-shadow--6dp">
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">{{ 'Brand' | translate }}</th>
+                <th class="mdl-data-table__cell--non-numeric">{{ 'Model' | translate }}</th>
+                <th class="mdl-data-table__cell--non-numeric">{{ 'Colour' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="data in vlc.data track by $index">
+                <td class="mdl-data-table__cell--non-numeric">{{ data.brand }}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{ data.model }}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{ data.colour }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</md-content></script>
+<script type="text/ng-template" id="header.html"><div class="mdl-layout__header-row">
+    <button id="menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">more_vert</i>
+    </button>
+
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="menu-lower-left">
+        <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">
+            <a class="mdl-navigation__link" ui-sref="home">{{ 'Home' | translate }}</a>
+        </li>
+        <li class="mdl-menu__item">
+            <a class="mdl-navigation__link" ui-sref="data">{{ 'Data table' | translate }}</a>
+        </li>
+        <li class="mdl-menu__item">
+            <a class="mdl-navigation__link" ui-sref="new-data">{{ 'Add data' | translate }}</a>
+        </li>
+    </ul>
+    <span class="mdl-layout-title">{{ 'Menu' | translate }}</span>
+    <div class="mdl-layout-spacer"></div>
+    <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="#" ng-click="hc.changeLanguage('en')">{{ 'English' | translate }}</a>
+        <a class="mdl-navigation__link" href="#" ng-click="hc.changeLanguage('fr')">{{ 'French' | translate }}</a>
+    </nav>
+</div></script>
+<script type="text/ng-template" id="home.html"><md-content flex layout-padding>
+    <h3>{{ "This is Sebastien Dan's boilerplate for webapps based on Angular 1.5 with Typescript and Material Design" | translate }}</h3>
+</md-content></script>

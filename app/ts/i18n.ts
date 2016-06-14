@@ -1,23 +1,22 @@
 /// <reference path="references.d.ts"/>
 
+// Default language is English so you don't have to add English strings here. Nevertheless when using
+// variables inside translated strings we need to specify in the template a system reference to the string with the variable.
+// In this case, you can add it here.
 let english = {
-    'invitedToJoinAsCleanerBy': 'You have been invited to join as a cleaner by {{hostName}}',
-    'acceptedInvitationBy': 'You have accepted an invitation by {{hostName}}',
-    'rejectedInvitationBy': 'You have rejected an invitation by {{hostName}}',
-    'checkYourEmailToVerify': 'Check your email {{email}} to verify your account.',
-    'number_of_bedrooms': '{{value}} bedrooms',
-    'number_of_beds': '{{value}} beds',
-    'number_of_bathrooms': '{{value}} bathrooms',
-    'number_of_bedroom': '{{value}} bedroom',
-    'number_of_bed': '{{value}} bed',
-    'number_of_bathroom': '{{value}} bathroom',
 };
 
-let japanese = {
-    'Host dashboard': 'ホストダッシュボード',
-    'Email': 'メールアドレス',
-    'Password': 'パスワード',
-    'Confirm password': 'パスワードの確認'
+let french = {
+    "This is Sebastien Dan's boilerplate for webapps based on Angular 1.5 with Typescript and Material Design": "Voici un boilerplate develope par Sebastien Dan pour builder une webapp sur fond d'Angular 1.5 avec Typescript et Material Design",
+    'English': 'Anglais',
+    'French': 'Francais',
+    'Home': "Page d'accueil",
+    'Data table': 'Tableau de donnees',
+    'Add data': 'Ajouter une donnee',
+    'Brand': 'Marque',
+    'Model': 'Modele',
+    'Colour': 'Couleur',
+    'Save new data': 'Sauver la nouvelle donnee'
 };
 
 export =[
@@ -25,7 +24,7 @@ export =[
         $translateProvider
             .useSanitizeValueStrategy('sanitizeParameters')
             .translations('en', english)
-            .translations('jp', japanese)
+            .translations('fr', french)
             .preferredLanguage('en');
     }
 ];

@@ -4,15 +4,15 @@ import {IComponentOptions} from "angular";
 import {IDataFactory} from "../factories/DataFactory";
 import {Data} from "../models/Data";
 
-export class DataTable implements IComponentOptions {
+export class ViewList implements IComponentOptions {
 
-    public controller: any = DataTableController;
-    public controllerAs: string = 'dtc';
-    public templateUrl: string = 'data-table.html';
+    public controller: any = ViewListController;
+    public controllerAs: string = 'vlc';
+    public templateUrl: string = 'view-list.html';
 
 }
 
-class DataTableController {
+class ViewListController {
     static $inject = ['DataFactory'];
 
     data: {};

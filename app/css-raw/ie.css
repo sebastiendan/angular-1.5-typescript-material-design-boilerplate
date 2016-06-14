@@ -1,0 +1,113 @@
+.mdl-layout {
+    display: block;
+}
+
+.mdl-layout__header-row {
+    padding-top: 10px;
+}
+
+.mdl-layout__content, mdl-layout__header-row, .page-content {
+    display: block;
+    width: 100%;
+}
+
+.mdl-layout-spacer, .mdl-layout__header-row .mdl-navigation__link {
+    display: inline-block;
+}
+
+.mdl-navigation, #logo {
+    float: right;
+}
+
+.mdl-grid {
+    display: block;
+    width: 100%;
+}
+
+.mdl-grid >* {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.mdl-cell--3-col, .mdl-cell--3-col-desktop.mdl-cell--3-col-desktop {
+    width: calc(25% - 16px);
+}
+
+.mdl-cell--4-col, .mdl-cell--4-col-desktop.mdl-cell--4-col-desktop {
+    width: calc(33% - 16px);
+}
+
+.mdl-cell--6-col, .mdl-cell--6-col-desktop.mdl-cell--6-col-desktop {
+    width: calc(50% - 16px);
+}
+
+.mdl-cell--9-col, .mdl-cell--9-col-desktop.mdl-cell--9-col-desktop {
+    width: calc(75% - 16px);
+}
+
+.mdl-cell--12-col, .mdl-cell--12-col-desktop.mdl-cell--12-col-desktop {
+    width: calc(100% - 16px);
+}
+
+.mdl-cell--1-col {
+    width: calc(8% - 16px);
+}
+
+.mdl-tabs__tab-bar {
+    display: block;
+    text-align: center;
+}
+
+.mdl-tabs__tab-bar a {
+    display: inline-block;
+    float: none;
+}
+
+.mdl-layout-title {
+    top: 12px;
+    float: left;
+}
+
+#menu-lower-left {
+    top: 7px;
+    float: left;
+}
+
+#menu-lower-left i {
+    width: 4px;
+    border-radius: 5px;
+    background-color: white;
+    -ms-transform: translateX(-50%) translateY(-50%);
+}
+
+#menu-lower-left i:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: #228FB1;
+}
+
+#menu-lower-left i:after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: #228FB1;
+}
+
+md-radio-button .md-container {
+    -ms-transform: translateY(-50%);
+}
+
+md-radio-button.md-checked .md-on {
+    -ms-transform: scale(.5);
+}
+
+md-radio-button .md-on {
+    -ms-transform: scale(0);
+}

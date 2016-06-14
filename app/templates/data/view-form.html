@@ -1,0 +1,21 @@
+<md-content flex layout-padding>
+    <form ng-submit="vfc.saveData()" name="vfc.dataForm" novalidate>
+        <sd-select label="Brand"
+                   model="vfc.newData.brand"
+                   data="{'Fender': 'Fender', 'Gibson': 'Gibson', 'Godin': 'Godin'}"
+                   required="true">
+        </sd-select>
+        <sd-input model="vfc.newData.model"
+                  label="Model"
+                  name="model"
+                  type="text"
+                  required="true">
+        </sd-input>
+        <sd-radio model="vfc.newData.colour"
+                  label="Colour"
+                  data="{'Sonic Blue': 'Sonic Blue', 'Sunburst': 'Sunburst'}"
+                  required="true">
+        </sd-radio>
+        <sd-submit value="Save new data"></sd-submit>
+    </form>
+</md-content>

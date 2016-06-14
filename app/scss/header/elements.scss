@@ -1,0 +1,15 @@
+@import '../variables';
+
+.mdl-layout__header-row {
+    position: relative;
+    padding-left: 10px;
+    transition: background-color .2s linear;
+
+    .mdl-navigation__link {
+        color: black;
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}

@@ -7,8 +7,8 @@
 import angular = require("angular");
 import app = require("./app.module");
 import routeConfig =  require("./route-config");
-import httpConfig =  require("../../common/ts/http-config");
-import i18n =  require("../../common/ts/i18n");
+import httpConfig =  require("./http-config");
+import i18n =  require("./i18n");
 
 app.config(httpConfig).config(routeConfig).config(i18n);
 

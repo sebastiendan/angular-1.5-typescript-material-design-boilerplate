@@ -1,0 +1,24 @@
+@import '../variables';
+
+.ng-message-wrapper:not(.ng-active) {
+    display: none;
+}
+
+.ng-message-wrapper.ng-active {
+    overflow: hidden;
+    margin-top: -30px;
+    width: 300px;
+    max-width: 100%;
+
+    &.sq-checkbox-message-wrapper {
+        margin-top: 0;
+    }
+}
+
+.ng-message {
+    position: relative;
+    display: inline-block;
+    padding: 2px 5px;
+    font-size: 12px;
+    color: $error;
+}

@@ -3,6 +3,7 @@
 require.config({
     paths: {
         "jquery": "../../bower_components/jquery/dist/jquery.min",
+        "bowser": "../../../node_modules/bowser/bowser.min",
         "angular": "../../bower_components/angular/angular.min",
         "angular-ui-router": "../../bower_components/angular-ui-router/release/angular-ui-router.min",
         "angular-sanitize": "../../bower_components/angular-sanitize/angular-sanitize.min",

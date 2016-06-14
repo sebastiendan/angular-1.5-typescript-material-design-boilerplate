@@ -1,0 +1,47 @@
+@import '../variables';
+
+body {
+    background-color: #f1f1f1;
+}
+
+md-radio-group {
+    label {
+        color: black;
+        padding-left: 2px;
+    }
+
+    md-radio-button {
+        margin: 8px 0 !important;
+
+        .md-container {
+            left: 2px;
+        }
+
+        &:last-of-type {
+            margin-bottom: 20px !important;
+        }
+    }
+}
+
+md-input-container {
+    margin-bottom: 25px;
+
+    .md-errors-spacer {
+        display: none;
+    }
+
+    label {
+        white-space: nowrap;
+    }
+
+    &[disabled] {
+        margin: 5px 0;
+
+        label {
+            position: static;
+            color: black !important;
+            padding-left: 0 !important;
+            margin-left: 0 !important;
+        }
+    }
+}

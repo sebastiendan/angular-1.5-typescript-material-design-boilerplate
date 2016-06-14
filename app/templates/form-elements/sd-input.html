@@ -1,0 +1,43 @@
+<!-- Generic input types -->
+<md-input-container ng-class="{'md-block': sic.block}" ng-if="['text', 'email', 'password', 'number', 'textarea', 'tel'].indexOf(sic.type) > -1" ng-disabled="sic.disabled">
+    <label for="{{ sic.name }}">{{ sic.label | translate }}</label>
+    <input type="{{ sic.type }}"
+           id="{{ sic.name }}"
+           name="{{ sic.name }}"
+           ng-model="sic.model"
+           ng-required="sic.required"
+           ng-pattern="sic.customPattern"
+           ng-disabled="sic.disabled"
+           ng-if="sic.type!='textarea'"
+           ng-show="sic.showInput">
+    <textarea type="{{ sic.type }}"
+              id="{{ sic.name }}"
+              name="{{ sic.name }}"
+              ng-model="sic.model"
+              ng-required="sic.required"
+              ng-disabled="sic.disabled"
+              ng-if="sic.type=='textarea'"
+              ng-show="sic.showInput">
+    </textarea>
+    <div class="sd-empty-field" ng-show="sic.showEmptyLabel">{{ sic.emptyLabel | translate }}</div>
+</md-input-container>
+
+<!-- Checkbox -->
+<label ng-if="sic.type=='checkbox'" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect sd-input-checkbox-wrapper"
+       for="{{ sic.name }}">
+    <input type="checkbox"
+           id="{{ sic.name }}"
+           class="mdl-checkbox__input sd-input-checkbox"
+           name="{{ sic.name }}"
+           ng-model="sic.model"
+           ng-required="sic.required"
+           ng-disabled="sic.disabled">
+    <span class="mdl-checkbox__label sd-input-checkbox-label">{{ sic.label | translate }}</span>
+</label>
+
+<!-- Error messages -->
+<div class="ng-message-wrapper" ng-class="{'sd-checkbox-message-wrapper': sic.type=='checkbox'}" ng-messages="sic.form[sic.name].$error" role="alert"
+     ng-show="sic.form.$submitted && sic.form[sic.name].$invalid" multiple>
+    <div ng-repeat="msg in sic.customMessages" class="ng-message" ng-message="{{ msg.id }}">{{ msg.message | translate }}</div>
+    <div ng-messages-include="error-messages.html"></div>
+</div>

@@ -1,0 +1,6 @@
+<md-input-container style="margin-bottom: 0">
+    <label>{{ ssc.label | translate }}</label>
+    <md-select ng-model="ssc.model">
+        <md-option ng-repeat="(value, label) in ssc.data track by $index" value="{{value}}">{{ label | translate }}</md-option>
+    </md-select>
+</md-input-container>

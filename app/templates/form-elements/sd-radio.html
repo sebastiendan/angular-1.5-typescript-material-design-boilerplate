@@ -1,0 +1,4 @@
+<md-radio-group ng-model="src.model">
+    <label>{{ src.label | translate }}</label>
+    <md-radio-button ng-repeat="(value, label) in src.data track by $index" value="{{value}}" ng-disabled="src.disabled">{{ label | translate }}</md-radio-button>
+</md-radio-group>
