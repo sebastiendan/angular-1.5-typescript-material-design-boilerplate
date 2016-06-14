@@ -1,0 +1,33 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "angularjs/angular.d.ts": {
+      "commit": "f3911d711006be676d9e1bcbc7c768b39d1ad81b"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "f3911d711006be676d9e1bcbc7c768b39d1ad81b"
+    },
+    "requirejs/require.d.ts": {
+      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
+    },
+    "angularjs/angular-route.d.ts": {
+      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
+    },
+    "angular-ui-router/angular-ui-router.d.ts": {
+      "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
+    },
+    "moment/moment.d.ts": {
+      "commit": "57f79a1f3cb66a43dd54a27987694233765bf9cc"
+    },
+    "moment/moment-node.d.ts": {
+      "commit": "57f79a1f3cb66a43dd54a27987694233765bf9cc"
+    },
+    "angular-material/angular-material.d.ts": {
+      "commit": "f3911d711006be676d9e1bcbc7c768b39d1ad81b"
+    }
+  }
+}

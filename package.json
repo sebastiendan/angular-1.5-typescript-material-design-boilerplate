@@ -1,0 +1,32 @@
+{
+  "name": "angular_with_typescript_and_material_design",
+  "version": "1.0.0",
+  "description": "Angular 1 with Typescript and Material Design",
+  "private": true,
+  "scripts": {
+    "gulp": "gulp",
+    "bower": "bower",
+  },
+  "author": "Sebastien Dan",
+  "devDependencies": {
+    "bower": "1.7.9",
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-folders": "^1.1.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-jshint": "2.0.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.3.1",
+    "gulp-typescript": "2.13.0",
+    "jshint": "2.9.1",
+    "typescript": "1.8.10"
+  },
+  "dependencies": {
+    "bowser": "^1.2.0",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-tslint": "^4.3.5",
+    "tslint": "^3.7.4"
+  }
+}
